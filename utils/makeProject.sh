@@ -53,4 +53,12 @@ elif [ $1 = "Nextjs" ]; then
       break
     fi
   done
+elif [ $1 = "Express" ]; then
+  echo "Inicializando projeto utilizando Express..."
+  echo ""
+  echo "Você vai utilizar qual gerenciador de pacotes?"
+
+  chmod +x ./modules/makeExpressProject.sh
+  ./modules/makeExpressProject.sh
+  exit
 fi

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 chmod +x ./utils/makeProject.sh
-OPTIONS="Nextjs CRA Vite"
+OPTIONS="Nextjs CRA Vite Express"
 
 select opt in $OPTIONS; do
   case $opt in
@@ -15,6 +15,10 @@ select opt in $OPTIONS; do
     ;;
   "Vite")
     ./utils/makeProject.sh Vite
+    break
+    ;;
+  "Express")
+    ./utils/makeProject.sh Express
     break
     ;;
   *)
