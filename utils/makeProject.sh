@@ -4,66 +4,109 @@ sleep 1
 clear
 sleep 1
 
-if [ $1 = "Vite" ]; then
-  echo "Inicializando projeto utilizando Vite..."
-  echo ""
-  echo "Você vai utilizar Typescript?"
+echo "Initializing project using $1..."
+echo ""
+echo "You will use Typescript?"
 
-  select opt in "Sim" "Não"; do
-    if [ "$opt" = "Sim" ]; then
-      npm create vite@latest -- --template react-ts
-      echo "Done!"
-      break
-    else
-      npm create vite@latest -- --template react
-      echo "Done!"
-      break
-    fi
-  done
-elif [ $1 = "CRA" ]; then
-  echo "Inicializando projeto utilizando CRA..."
-  echo ""
-  echo "Você vai utilizar Typescript?"
+select opt in "Yes" "No"; do
+  if [ "$opt" = "Yes" ]; then
+    echo "Which package manager do you want to use?"
 
-  select opt in "Sim" "Não"; do
-    if [ "$opt" = "Sim" ]; then
-      echo "Digite o nome do projeto:"
+    select manager in "yarn" "npm"; do
+      if [ "$manager" = "yarn" ]; then
+        if [ $1 = "Vite" ]; then
+          yarn create vite --template react-ts
+          echo "Done!"
+          exit 1
+        elif [ $1 = "CRA" ]; then
+          yarn create react-app my-react-app --template typescript
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Nextjs" ]; then
+          yarn create next-app --ts --no-eslint
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Express" ]; then
+          chmod +x ./modules/makeExpressProject.sh
+          ./modules/makeExpressProject.sh yarn Yes
+          exit
+        fi
+      elif [ "$manager" = "npm" ]; then
+        if [ $1 = "Vite" ]; then
+          npm create vite@latest -- --template react-ts
+          echo "Done!"
+          exit 1
+        elif [ $1 = "CRA" ]; then
+          npx create-react-app@latest my-react-app --template typescript
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Nextjs" ]; then
+          npx create-next-app@latest --ts --no-eslint
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Express" ]; then
+          chmod +x ./modules/makeExpressProject.sh
+          ./modules/makeExpressProject.sh npm Yes
+          exit
+        fi
+      else
+        echo "Invalid option"
+        exit 1
+      fi
+    done
+  elif [ "$opt" = "No" ]; then
+    echo "Which package manager do you want to use?"
 
-      read $projectname
-      npx create-react-app@latest $((projectname)) --template typescript
-      echo "Done!"
-      break
-    else
-      echo "Digite o nome do projeto:"
-
-      read $projectname
-      npx create-react-app@latest $((projectname))
-      echo "Done!"
-      break
-    fi
-  done
-elif [ $1 = "Nextjs" ]; then
-  echo "Inicializando projeto utilizando Nextjs..."
-  echo ""
-  echo "Você vai utilizar Typescript?"
-
-  select opt in "Sim" "Não"; do
-    if [ "$opt" = "Sim" ]; then
-      npx create-next-app@latest --ts
-      echo "Done!"
-      break
-    else
-      npx create-next-app@latest
-      echo "Done!"
-      break
-    fi
-  done
-elif [ $1 = "Express" ]; then
-  echo "Inicializando projeto utilizando Express..."
-  echo ""
-  echo "Você vai utilizar qual gerenciador de pacotes?"
-
-  chmod +x ./modules/makeExpressProject.sh
-  ./modules/makeExpressProject.sh
-  exit
-fi
+    select manager in "yarn" "npm"; do
+      if [ "$manager" = "yarn" ]; then
+        if [ $1 = "Vite" ]; then
+          yarn create vite --template react
+          echo "Done!"
+          exit 1
+        elif [ $1 = "CRA" ]; then
+          yarn create react-app my-react-app
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Nextjs" ]; then
+          yarn create next-app --no-eslint
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Express" ]; then
+          chmod +x ./modules/makeExpressProject.sh
+          ./modules/makeExpressProject.sh yarn No
+          exit
+        else
+          echo "Invalid option"
+          exit 1
+        fi
+      elif [ "$manager" = "npm" ]; then
+        if [ $1 = "Vite" ]; then
+          npm create vite@latest -- --template react
+          echo "Done!"
+          exit 1
+        elif [ $1 = "CRA" ]; then
+          npx create-react-app@latest my-react-app
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Nextjs" ]; then
+          npx create-next-app@latest --no-eslint
+          echo "Done!"
+          exit 1
+        elif [ $1 = "Express" ]; then
+          chmod +x ./modules/makeExpressProject.sh
+          ./modules/makeExpressProject.sh npm No
+          exit
+        else
+          echo "Invalid option"
+          exit 1
+        fi
+      else
+        echo "Invalid option"
+        exit 1
+      fi
+    done
+  else
+    echo "Invalid option"
+    exit 1
+  fi
+done
