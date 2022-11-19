@@ -20,11 +20,22 @@
 
 # :rocket: How use
 
+Instalation:
+
+```bash
+# Clone this repository
+git clone https://github.com/wesleyara/create-app ~/create-app
+cd ~/create-app
+
+# Add to your path
+chmod +x script.sh
+sudo ln -s ~/create-app/script.sh /usr/bin/create-app
+```
+
 Run:
 
 ```bash
-chmod +x script.sh
-./script.sh
+create-app
 ```
 
 Answer the questions (When choosing the tool, use the arrows keys to navigate, the spacebar to select and enter to finish)
