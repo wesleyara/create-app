@@ -1,24 +1,24 @@
 #!/bin/bash
 
-chmod +x ./utils/makeProject.sh
+chmod +x $HOME/create-app/utils/makeProject.sh
 OPTIONS="Nextjs CRA Vite Express"
 
 select opt in $OPTIONS; do
   case $opt in
   "Nextjs")
-    ./utils/makeProject.sh Nextjs
+    $HOME/create-app/utils/makeProject.sh Nextjs
     break
     ;;
   "CRA")
-    ./utils/makeProject.sh CRA
+    $HOME/create-app/utils/makeProject.sh CRA
     break
     ;;
   "Vite")
-    ./utils/makeProject.sh Vite
+    $HOME/create-app/utils/makeProject.sh Vite
     break
     ;;
   "Express")
-    ./utils/makeProject.sh Express
+    $HOME/create-app/utils/makeProject.sh Express
     break
     ;;
   *)

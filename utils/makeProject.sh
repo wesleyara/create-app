@@ -63,7 +63,7 @@ elif [ $1 = "Express" ]; then
   echo ""
   echo "Você vai utilizar qual gerenciador de pacotes?"
 
-  chmod +x ./modules/makeExpressProject.sh
-  ./modules/makeExpressProject.sh
+  chmod +x $HOME/create-app/modules/makeExpressProject.sh
+  $HOME/create-app/modules/makeExpressProject.sh
   exit
 fi
