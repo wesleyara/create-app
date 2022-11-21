@@ -32,8 +32,10 @@ select opt in "Yes" "No"; do
 
     npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
     npm set-script format "prettier --write src"
+    break
   elif [ "$opt" = "No" ]; then
     echo "Done!"
+    break
   else
     echo "Invalid option"
     exit 1
