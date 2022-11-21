@@ -24,12 +24,12 @@ Instalation:
 
 ```bash
 # Clone this repository
-git clone https://github.com/wesleyara/create-app ~/create-app
-cd ~/create-app
+git clone https://github.com/wesleyara/create-app $HOME/create-app
+cd $HOME/create-app
 
 # Add to your path
-chmod +x script.sh
-sudo ln -s ~/create-app/script.sh /usr/bin/create-app
+chmod +x $HOME/create-app/script.sh
+sudo ln -s $HOME/create-app/script.sh /usr/bin/create-app
 ```
 
 Run:
