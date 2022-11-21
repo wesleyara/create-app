@@ -51,14 +51,14 @@ Answer the questions (When choosing the tool, use the arrows keys to navigate, t
 
 ## :technologist: Improve Developer experience
 
-- [Eslint](https://eslint.org/docs/user-guide/configuring/), [Prettier](https://prettier.io) and [Editorconfig](https://editorconfig.org) **Under development**
+- [Eslint](https://eslint.org/docs/user-guide/configuring/), [Prettier](https://prettier.io) and [Editorconfig](https://editorconfig.org)
 - [Lint Staged](https://github.com/okonet/lint-staged) (with [husky](https://typicode.github.io/husky/#/)) | **Under development**
 - [Commitizen](https://github.com/commitizen/cz-cli) and [Commitlint](https://commitlint.js.org/#/) (with [husky](https://typicode.github.io/husky/#/)) | **Under development**
 - Basic CI (with [github actions](https://docs.github.com/en/actions/learn-github-actions/understanding-github-actions)) | **Under development**
 
 ## :art: Style Libraries
 
-- [Tailwind](https://tailwindcss.com/docs/installation) **Under development**
+- [Tailwind](https://tailwindcss.com/docs/installation)
 - [Styled Components](https://styled-components.com) | **Under development**
 
 ## :sparkles: Others
