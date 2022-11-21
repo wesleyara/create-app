@@ -18,19 +18,31 @@ select opt in "Yes" "No"; do
           yarn create vite my-vite-app --template react-ts
           cd my-vite-app
           yarn
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh vite
+
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
           yarn create react-app my-react-app --template typescript
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh react
+
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
           yarn create next-app my-next-app --ts --no-eslint
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh next
+
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
-          chmod +x ./modules/makeExpressProject.sh
-          ./modules/makeExpressProject.sh yarn Yes
+          chmod +x $HOME/create-app/modules/makeExpressProject.sh
+          $HOME/create-app/modules/makeExpressProject.sh yarn Yes
           exit
         fi
       elif [ "$manager" = "npm" ]; then
@@ -38,19 +50,31 @@ select opt in "Yes" "No"; do
           npm create vite@latest my-vite-app -- --template react-ts
           cd my-vite-app
           npm install
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh vite
+
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
           npx create-react-app@latest my-react-app --template typescript
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh react
+
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
           npx create-next-app@latest my-next-app --ts --no-eslint
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh next
+
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
-          chmod +x ./modules/makeExpressProject.sh
-          ./modules/makeExpressProject.sh npm Yes
+          chmod +x $HOME/create-app/modules/makeExpressProject.sh
+          $HOME/create-app/modules/makeExpressProject.sh npm Yes
           exit
         fi
       else
@@ -67,19 +91,31 @@ select opt in "Yes" "No"; do
           yarn create vite my-vite-app --template react
           cd my-vite-app
           yarn
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh vite
+
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
           yarn create react-app my-react-app
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh react
+
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
           yarn create next-app my-next-app --no-eslint
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh next
+
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
-          chmod +x ./modules/makeExpressProject.sh
-          ./modules/makeExpressProject.sh yarn No
+          chmod +x $HOME/create-app/modules/makeExpressProject.sh
+          $HOME/create-app/modules/makeExpressProject.sh yarn No
           exit
         else
           echo "Invalid option"
@@ -90,19 +126,31 @@ select opt in "Yes" "No"; do
           npm create vite@latest my-vite-app -- --template react
           cd my-vite-app
           npm install
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh vite
+
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
           npx create-react-app@latest my-react-app
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh react
+
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
           npx create-next-app@latest my-next-app --no-eslint
+
+          chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
+          $HOME/create-app/utils/makeEslintPrettier.sh next
+
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
-          chmod +x ./modules/makeExpressProject.sh
-          ./modules/makeExpressProject.sh npm No
+          chmod +x $HOME/create-app/modules/makeExpressProject.sh
+          $HOME/create-app/modules/makeExpressProject.sh npm No
           exit
         else
           echo "Invalid option"
