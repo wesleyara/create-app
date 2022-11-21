@@ -1,106 +1,46 @@
 #! /bin/bash
 
-OPTIONS="Nextjs CRA Vite"
-
 MANAGER_MESSAGE="npm install"
+
+if [ $1 != "vite" ]; then
+  cd my-$1-app
+fi
 
 if [ -f "yarn.lock" ]; then
   MANAGER_MESSAGE="yarn add"
 fi
 
-case $1 in
-"Nextjs")
-  if [ "$2" = "Yes" ]; then
-    cd my-next-app
+echo "Want to use Eslint and Prettier?"
 
-    $MANAGER_MESSAGE @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-next eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier -D
+select opt in "Yes" "No"; do
+  if [ "$opt" = "Yes" ]; then
+    if [ -f "tsconfig.json" ]; then
+      $MANAGER_MESSAGE -D @typescript-eslint/parser @typescript-eslint/eslint-plugin
 
-    npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
-    npm set-script format "prettier --write src"
-
-    cp ./assets/react-ts/eslintrc.txt ./my-next-app/.eslintrc.json
-    cp ./assets/react-ts/prettierrc.txt ./my-next-app/.prettierrc.json
-
-    cd ..
-  elif [ "$2" = "No" ]; then
-    cd my-next-app
-
-    $MANAGER_MESSAGE eslint eslint-config-next eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier -D
-
-    npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
-    npm set-script format "prettier --write src"
-
-    cp ./assets/react/eslintrc.txt ./my-next-app/.eslintrc.json
-    cp ./assets/react/prettierrc.txt ./my-next-app/.prettierrc.json
-
-    cd ..
-  else
-    echo "Invalid option"
-    exit 1
-  fi
-  ;;
-"CRA")
-  if [ "$2" = "Yes" ]; then
-    cd my-react-app
-
-    $MANAGER_MESSAGE @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier -D
-
-    npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
-    npm set-script format "prettier --write src"
-
-    cp ./assets/react-ts/eslintrc.txt ./my-react-app/.eslintrc.json
-    cp ./assets/react-ts/prettierrc.txt ./my-react-app/.prettierrc.json
-
-    cd ..
-  elif [ "$2" = "No" ]; then
-    cd my-react-app
+      cp $HOME/create-app/assets/react-ts/eslintrc.txt .eslintrc.json
+      cp $HOME/create-app/assets/react-ts/prettierrc.txt .prettierrc.json
+    else
+      cp $HOME/create-app/assets/react/eslintrc.txt .eslintrc.json
+      cp $HOME/create-app/assets/react/prettierrc.txt .prettierrc.json
+    fi
 
     $MANAGER_MESSAGE eslint eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier -D
 
+    if [ "$1" = "next" ]; then
+      $MANAGER_MESSAGE eslint-config-next -D
+    fi
+
     npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
     npm set-script format "prettier --write src"
-
-    cp ./assets/react/eslintrc.txt ./my-react-app/.eslintrc.json
-    cp ./assets/react/prettierrc.txt ./my-react-app/.prettierrc.json
-
-    cd ..
+  elif [ "$opt" = "No" ]; then
+    echo "Done!"
   else
     echo "Invalid option"
     exit 1
   fi
-  ;;
-"Vite")
-  if [ "$2" = "Yes" ]; then
-    cd my-vite-app
+done
 
-    $MANAGER_MESSAGE @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier -D
+chmod +x $HOME/create-app/utils/makeGitRepository.sh
+$HOME/create-app/utils/makeGitRepository.sh
 
-    npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
-    npm set-script format "prettier --write src"
-
-    cp ./assets/react-ts/eslintrc.txt ./my-react-app/.eslintrc.json
-    cp ./assets/react-ts/prettierrc.txt ./my-react-app/.prettierrc.json
-
-    cd ..
-  elif [ "$2" = "No" ]; then
-    cd my-vite-app
-
-    $MANAGER_MESSAGE eslint eslint-config-prettier eslint-config-standard eslint-plugin-import eslint-plugin-import-helpers eslint-plugin-n eslint-plugin-prettier eslint-plugin-promise eslint-plugin-react eslint-plugin-react-hooks prettier -D
-
-    npm set-script lint "eslint --ext .js,.jsx,.ts,.tsx src"
-    npm set-script format "prettier --write src"
-
-    cp ./assets/react/eslintrc.txt ./my-react-app/.eslintrc.json
-    cp ./assets/react/prettierrc.txt ./my-react-app/.prettierrc.json
-
-    cd ..
-  else
-    echo "Invalid option"
-    exit 1
-  fi
-  ;;
-*)
-  echo "Invalid option"
-  exit 1
-  ;;
-esac
+cd ..
