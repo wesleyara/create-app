@@ -37,6 +37,14 @@ Run:
 create-app
 ```
 
+Update:
+
+```bash
+cd $HOME/create-app
+git pull
+cd -
+```
+
 Answer the questions (When choosing the tool, use the arrows keys to navigate, the spacebar to select and enter to finish)
 
 # 🛠️ Tools
