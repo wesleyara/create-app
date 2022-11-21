@@ -42,6 +42,8 @@ select opt in "Yes" "No"; do
   fi
 done
 
+cp $HOME/create-app/assets/generics/editorconfig.txt .editorconfig
+
 chmod +x $HOME/create-app/utils/makeGitRepository.sh
 $HOME/create-app/utils/makeGitRepository.sh
 

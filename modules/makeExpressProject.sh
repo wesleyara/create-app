@@ -19,6 +19,8 @@ if [ "$1" = "npm" ]; then
     mkdir src
     mkdir src/routes
     mkdir public
+
+    cp $HOME/create-app/assets/generics/editorconfig.txt .editorconfig
     cd ..
 
     cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.ts
@@ -64,6 +66,8 @@ if [ "$1" = "npm" ]; then
     mkdir src
     mkdir src/routes
     mkdir public
+
+    cp $HOME/create-app/assets/generics/editorconfig.txt .editorconfig
     cd ..
 
     cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.js
@@ -111,6 +115,8 @@ elif [ $1 = "yarn" ]; then
     mkdir src
     mkdir src/routes
     mkdir public
+
+    cp $HOME/create-app/assets/generics/editorconfig.txt .editorconfig
     cd ..
 
     cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.ts
@@ -154,6 +160,8 @@ elif [ $1 = "yarn" ]; then
     mkdir src
     mkdir src/routes
     mkdir public
+
+    cp $HOME/create-app/assets/generics/editorconfig.txt .editorconfig
     cd ..
 
     cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.js
