@@ -19,6 +19,9 @@ select opt in "Yes" "No"; do
           cd my-vite-app
           yarn
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh vite
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh vite
 
@@ -27,6 +30,9 @@ select opt in "Yes" "No"; do
         elif [ $1 = "CRA" ]; then
           yarn create react-app my-react-app --template typescript
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh react
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh react
 
@@ -34,6 +40,9 @@ select opt in "Yes" "No"; do
           exit 1
         elif [ $1 = "Nextjs" ]; then
           yarn create next-app my-next-app --ts --no-eslint
+
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh next
 
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh next
@@ -51,6 +60,9 @@ select opt in "Yes" "No"; do
           cd my-vite-app
           npm install
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh vite
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh vite
 
@@ -59,6 +71,9 @@ select opt in "Yes" "No"; do
         elif [ $1 = "CRA" ]; then
           npx create-react-app@latest my-react-app --template typescript
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh react
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh react
 
@@ -66,6 +81,9 @@ select opt in "Yes" "No"; do
           exit 1
         elif [ $1 = "Nextjs" ]; then
           npx create-next-app@latest my-next-app --ts --no-eslint
+
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh next
 
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh next
@@ -92,6 +110,9 @@ select opt in "Yes" "No"; do
           cd my-vite-app
           yarn
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh vite
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh vite
 
@@ -100,6 +121,9 @@ select opt in "Yes" "No"; do
         elif [ $1 = "CRA" ]; then
           yarn create react-app my-react-app
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh react
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh react
 
@@ -107,6 +131,9 @@ select opt in "Yes" "No"; do
           exit 1
         elif [ $1 = "Nextjs" ]; then
           yarn create next-app my-next-app --no-eslint
+
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh next
 
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh next
@@ -127,6 +154,9 @@ select opt in "Yes" "No"; do
           cd my-vite-app
           npm install
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh vite
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh vite
 
@@ -135,6 +165,9 @@ select opt in "Yes" "No"; do
         elif [ $1 = "CRA" ]; then
           npx create-react-app@latest my-react-app
 
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh react
+
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh react
 
@@ -142,6 +175,9 @@ select opt in "Yes" "No"; do
           exit 1
         elif [ $1 = "Nextjs" ]; then
           npx create-next-app@latest my-next-app --no-eslint
+
+          chmod +x $HOME/create-app/modules/organizeDirectory.sh
+          $HOME/create-app/modules/organizeDirectory.sh next
 
           chmod +x $HOME/create-app/utils/makeEslintPrettier.sh
           $HOME/create-app/utils/makeEslintPrettier.sh next
