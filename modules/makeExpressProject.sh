@@ -21,10 +21,10 @@ if [ "$1" = "npm" ]; then
     mkdir public
     cd ..
 
-    cp ./assets/express/src/index.txt ./my-express-app/src/index.ts
-    cp ./assets/express/src/routes/index.txt ./my-express-app/src/routes/index.ts
-    cp ./assets/express/gitignore.txt ./my-express-app/.gitignore
-    cp ./assets/express/tsconfig.txt ./my-express-app/tsconfig.json
+    cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.ts
+    cp $HOME/create-app/assets/express/src/routes/index.txt ./my-express-app/src/routes/index.ts
+    cp $HOME/create-app/assets/express/gitignore.txt ./my-express-app/.gitignore
+    cp $HOME/create-app/assets/express/tsconfig.txt ./my-express-app/tsconfig.json
 
     clear
     echo "Want to use Eslint and Prettier?"
@@ -34,11 +34,10 @@ if [ "$1" = "npm" ]; then
         echo "Adding ESLint and Prettier..."
         echo ""
 
-        cp ./assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
-        cp ./assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
-        cp ./assets/express/prettierignore.txt ./my-express-app/.prettierignore
-        cp ./assets/express/eslintignore.txt ./my-express-app/.eslintignore
-
+        cp $HOME/create-app/assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
+        cp $HOME/create-app/assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
+        cp $HOME/create-app/assets/express/prettierignore.txt ./my-express-app/.prettierignore
+        cp $HOME/create-app/assets/express/eslintignore.txt ./my-express-app/.eslintignore
 
         echo "Done!"
         break
@@ -67,9 +66,9 @@ if [ "$1" = "npm" ]; then
     mkdir public
     cd ..
 
-    cp ./assets/express/src/index.txt ./my-express-app/src/index.js
-    cp ./assets/express/src/routes/index.txt ./my-express-app/src/routes/index.js
-    cp ./assets/express/gitignore.txt ./my-express-app/.gitignore
+    cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.js
+    cp $HOME/create-app/assets/express/src/routes/index.txt ./my-express-app/src/routes/index.js
+    cp $HOME/create-app/assets/express/gitignore.txt ./my-express-app/.gitignore
 
     clear
     echo "Want to use Eslint and Prettier?"
@@ -79,11 +78,10 @@ if [ "$1" = "npm" ]; then
         echo "Adding ESLint and Prettier..."
         echo ""
 
-        cp ./assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
-        cp ./assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
-        cp ./assets/express/prettierignore.txt ./my-express-app/.prettierignore
-        cp ./assets/express/eslintignore.txt ./my-express-app/.eslintignore
-
+        cp $HOME/create-app/assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
+        cp $HOME/create-app/assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
+        cp $HOME/create-app/assets/express/prettierignore.txt ./my-express-app/.prettierignore
+        cp $HOME/create-app/assets/express/eslintignore.txt ./my-express-app/.eslintignore
 
         echo "Done!"
         break
@@ -115,10 +113,10 @@ elif [ $1 = "yarn" ]; then
     mkdir public
     cd ..
 
-    cp ./assets/express/src/index.txt ./my-express-app/src/index.ts
-    cp ./assets/express/src/routes/index.txt ./my-express-app/src/routes/index.ts
-    cp ./assets/express/gitignore.txt ./my-express-app/.gitignore
-    cp ./assets/express/tsconfig.txt ./my-express-app/tsconfig.json
+    cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.ts
+    cp $HOME/create-app/assets/express/src/routes/index.txt ./my-express-app/src/routes/index.ts
+    cp $HOME/create-app/assets/express/gitignore.txt ./my-express-app/.gitignore
+    cp $HOME/create-app/assets/express/tsconfig.txt ./my-express-app/tsconfig.json
 
     clear
     echo "Want to use Eslint and Prettier?"
@@ -128,12 +126,10 @@ elif [ $1 = "yarn" ]; then
         echo "Adding ESLint and Prettier..."
         echo ""
 
-        cp ./assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
-        cp ./assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
-        cp ./assets/express/prettierignore.txt ./my-express-app/.prettierignore
-        cp ./assets/express/eslintignore.txt ./my-express-app/.eslintignore
-
-
+        cp $HOME/create-app/assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
+        cp $HOME/create-app/assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
+        cp $HOME/create-app/assets/express/prettierignore.txt ./my-express-app/.prettierignore
+        cp $HOME/create-app/assets/express/eslintignore.txt ./my-express-app/.eslintignore
 
         echo "Done!"
         break
@@ -160,9 +156,9 @@ elif [ $1 = "yarn" ]; then
     mkdir public
     cd ..
 
-    cp ./assets/express/src/index.txt ./my-express-app/src/index.js
-    cp ./assets/express/src/routes/index.txt ./my-express-app/src/routes/index.js
-    cp ./assets/express/gitignore.txt ./my-express-app/.gitignore
+    cp $HOME/create-app/assets/express/src/index.txt ./my-express-app/src/index.js
+    cp $HOME/create-app/assets/express/src/routes/index.txt ./my-express-app/src/routes/index.js
+    cp $HOME/create-app/assets/express/gitignore.txt ./my-express-app/.gitignore
 
     clear
     echo "Want to use Eslint and Prettier?"
@@ -172,11 +168,10 @@ elif [ $1 = "yarn" ]; then
         echo "Adding ESLint and Prettier..."
         echo ""
 
-        cp ./assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
-        cp ./assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
-        cp ./assets/express/prettierignore.txt ./my-express-app/.prettierignore
-        cp ./assets/express/eslintignore.txt ./my-express-app/.eslintignore
-
+        cp $HOME/create-app/assets/express/eslintrc.txt ./my-express-app/.eslintrc.json
+        cp $HOME/create-app/assets/express/prettierrc.txt ./my-express-app/.prettierrc.json
+        cp $HOME/create-app/assets/express/prettierignore.txt ./my-express-app/.prettierignore
+        cp $HOME/create-app/assets/express/eslintignore.txt ./my-express-app/.eslintignore
 
         echo "Done!"
         break
