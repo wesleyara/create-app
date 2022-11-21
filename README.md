@@ -25,7 +25,6 @@ Instalation:
 ```bash
 # Clone this repository
 git clone https://github.com/wesleyara/create-app $HOME/create-app
-cd $HOME/create-app
 
 # Add to your path
 chmod +x $HOME/create-app/script.sh
