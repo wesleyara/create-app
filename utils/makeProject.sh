@@ -15,7 +15,7 @@ select opt in "Yes" "No"; do
     select manager in "yarn" "npm"; do
       if [ "$manager" = "yarn" ]; then
         if [ $1 = "Vite" ]; then
-          yarn create vite --template react-ts
+          yarn create vite my-vite-app --template react-ts
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -23,7 +23,7 @@ select opt in "Yes" "No"; do
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
-          yarn create next-app --ts --no-eslint
+          yarn create next-app my-next-app --ts --no-eslint
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
@@ -33,7 +33,7 @@ select opt in "Yes" "No"; do
         fi
       elif [ "$manager" = "npm" ]; then
         if [ $1 = "Vite" ]; then
-          npm create vite@latest -- --template react-ts
+          npm create vite@latest my-vite-app -- --template react-ts
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -41,7 +41,7 @@ select opt in "Yes" "No"; do
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
-          npx create-next-app@latest --ts --no-eslint
+          npx create-next-app@latest my-next-app --ts --no-eslint
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
@@ -60,7 +60,7 @@ select opt in "Yes" "No"; do
     select manager in "yarn" "npm"; do
       if [ "$manager" = "yarn" ]; then
         if [ $1 = "Vite" ]; then
-          yarn create vite --template react
+          yarn create vite my-vite-app --template react
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -68,7 +68,7 @@ select opt in "Yes" "No"; do
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
-          yarn create next-app --no-eslint
+          yarn create next-app my-next-app --no-eslint
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
@@ -81,7 +81,7 @@ select opt in "Yes" "No"; do
         fi
       elif [ "$manager" = "npm" ]; then
         if [ $1 = "Vite" ]; then
-          npm create vite@latest -- --template react
+          npm create vite@latest my-vite-app -- --template react
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -89,7 +89,7 @@ select opt in "Yes" "No"; do
           echo "Done!"
           exit 1
         elif [ $1 = "Nextjs" ]; then
-          npx create-next-app@latest --no-eslint
+          npx create-next-app@latest my-next-app --no-eslint
           echo "Done!"
           exit 1
         elif [ $1 = "Express" ]; then
