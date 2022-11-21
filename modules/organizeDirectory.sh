@@ -52,9 +52,6 @@ case $1 in
   cp $HOME/create-app/assets/$FOLDER/react/src/index.txt src/index.$EXTENSION
   cp $HOME/create-app/assets/$FOLDER/react/src/App.txt src/App.$EXTENSION
   ;;
-*)
-  break
-  ;;
 esac
 
 cd ..
