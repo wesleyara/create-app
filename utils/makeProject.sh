@@ -16,6 +16,8 @@ select opt in "Yes" "No"; do
       if [ "$manager" = "yarn" ]; then
         if [ $1 = "Vite" ]; then
           yarn create vite my-vite-app --template react-ts
+          cd my-vite-app
+          yarn
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -34,6 +36,8 @@ select opt in "Yes" "No"; do
       elif [ "$manager" = "npm" ]; then
         if [ $1 = "Vite" ]; then
           npm create vite@latest my-vite-app -- --template react-ts
+          cd my-vite-app
+          npm install
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -61,6 +65,8 @@ select opt in "Yes" "No"; do
       if [ "$manager" = "yarn" ]; then
         if [ $1 = "Vite" ]; then
           yarn create vite my-vite-app --template react
+          cd my-vite-app
+          yarn
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
@@ -82,6 +88,8 @@ select opt in "Yes" "No"; do
       elif [ "$manager" = "npm" ]; then
         if [ $1 = "Vite" ]; then
           npm create vite@latest my-vite-app -- --template react
+          cd my-vite-app
+          npm install
           echo "Done!"
           exit 1
         elif [ $1 = "CRA" ]; then
